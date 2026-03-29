@@ -40,7 +40,7 @@ resource "aws_instance" "app" {
     ami = "ami-0f5ee92e2d63afc18"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.public.id
-    vpc_security_group_ids = [aws_security_group.ec2_sg]
+    vpc_security_group_ids = [aws_security_group.ec2_sg.id]
     tags = {
         name= "App-Server"
     }
