@@ -63,7 +63,7 @@ resource "aws_db_instance" "db" {
 
     multi_az = true
     publicly_accessible = false
-    db_subnet_group_name = aws_security_group.db_subnet.name
+    db_subnet_group_name = aws_db_subnet_group.db_subnet.name
     vpc_security_group_ids = [aws_security_group.rds_sg.id]
 
     backup_retention_period = 7
