@@ -46,9 +46,9 @@ resource "aws_instance" "app" {
     }
 }
 
-resource "aws_db_security_group" "db_subnet" {
-    name = "db-security-group"
-    subnet_ids = [aws_subnet.private.id]
+resource "aws_db_subnet_group" "db_subnet" {
+  name       = "db-subnet-group"
+  subnet_ids = [aws_subnet.private.id]
 }
 
 resource "aws_db_instance" "db" {
